@@ -6,6 +6,9 @@
 \usage{
 read.recipe(x)
 }
+\arguments{
+\item{x}{the name of the recipe file to read}
+}
 \description{
 This function reads a recipe described in a yaml file. Fields must contain:
 \itemize{

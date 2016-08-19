@@ -16,6 +16,13 @@
 #' add.recipe("test")
 #' file.show("test.yml")
 #'
+#' @param x a yml file to save the recipe; if NULL, no file is saved
+#' @param title the title of the recipe
+#' @param date the date of entry, e.g. 2016-08-19
+#' @param author the author of the recipe
+#' @param ingredients a vector of characters indicating ingredients
+#' @param description a vector of characters giving cooking instructions
+#'
 #' @export
 #'
 add.recipe <- function(x = "new.recipe.yml", title = NULL,

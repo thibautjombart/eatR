@@ -7,6 +7,19 @@
 add.recipe(x = "new.recipe.yml", title = NULL, date = NULL,
   author = NULL, ingredients = NULL, description = NULL)
 }
+\arguments{
+\item{x}{a yml file to save the recipe; if NULL, no file is saved}
+
+\item{title}{the title of the recipe}
+
+\item{date}{the date of entry, e.g. 2016-08-19}
+
+\item{author}{the author of the recipe}
+
+\item{ingredients}{a vector of characters indicating ingredients}
+
+\item{description}{a vector of characters giving cooking instructions}
+}
 \description{
 This function reads a recipe described in a yaml file. Fields must contain:
 \itemize{

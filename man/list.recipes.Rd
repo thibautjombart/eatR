@@ -6,6 +6,9 @@
 \usage{
 list.recipes(...)
 }
+\arguments{
+\item{...}{arguments passed to 'dir'}
+}
 \description{
 This function reads a recipe described in a yaml file. Fields must contain:
 \itemize{

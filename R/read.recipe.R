@@ -17,6 +17,9 @@
 #' read.recipe(template)
 #'
 #' @export
+#'
+#' @param x the name of the recipe file to read
+#'
 read.recipe <- function(x) {
     out <- yaml::yaml.load_file(x)
 

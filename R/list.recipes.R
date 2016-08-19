@@ -18,6 +18,8 @@
 #'
 #' @export
 #'
+#' @param ... arguments passed to 'dir'
+#'
 list.recipes <- function(...) {
     dir(system.file("recipes", package="eatR"), ...)
 }
