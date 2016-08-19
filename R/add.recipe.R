@@ -18,7 +18,7 @@
 #'
 #' @export
 #'
-add.recipe <- function(x, title = NULL,
+add.recipe <- function(x = "new.recipe.yml", title = NULL,
                        date = NULL,
                        author = NULL,
                        ingredients = NULL,
@@ -28,20 +28,23 @@ add.recipe <- function(x, title = NULL,
 
     ## fill in stuff if provided
     if (!is.null(title)) {
-        out$title <- title
+        out$title <- as.character(title)
     }
     if (!is.null(date)) {
-        out$date <- date
+        out$date <- as.character(date)
     }
     if (!is.null(author)) {
-        out$author <- author
+        out$author <- as.Date(author)
     }
     if (!is.null(ingredients)) {
-        out$ingredients <- ingredients
+        out$ingredients <- as.character(ingredients)
     }
     if (!is.null(description)) {
-        out$description <- description
+        out$description <- as.character(description)
     }
-   return(out)
+
+
+    cat(yaml::as.yaml(out, file=file))
+    return(invisible(out))
 }
 
