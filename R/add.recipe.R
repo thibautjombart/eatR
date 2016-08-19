@@ -31,10 +31,10 @@ add.recipe <- function(x = "new.recipe.yml", title = NULL,
         out$title <- as.character(title)
     }
     if (!is.null(date)) {
-        out$date <- as.character(date)
+        out$date <- as.Date(date)
     }
     if (!is.null(author)) {
-        out$author <- as.Date(author)
+        out$author <- as.character(author)
     }
     if (!is.null(ingredients)) {
         out$ingredients <- as.character(ingredients)
@@ -43,8 +43,12 @@ add.recipe <- function(x = "new.recipe.yml", title = NULL,
         out$description <- as.character(description)
     }
 
+    if (!is.null(x)) {
+        cat(sprintf("\nCreating new recipe in file %s\n", x))
+        cat(yaml::as.yaml(out), file=x)
+        return(invisible(out))
+    }
 
-    cat(yaml::as.yaml(out, file=file))
-    return(invisible(out))
+    return(out)
 }
 
